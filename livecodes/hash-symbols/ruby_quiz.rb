@@ -67,9 +67,10 @@ students = [ [ "john", 28 ], [ "mary", 25 ], [ "paul", 21 ] ]
 # end
 
 students = students.map do |name, age|
+
   {
     name: name,
     age: age
   }
 end
- p students
+p students
