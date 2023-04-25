@@ -1,0 +1,14 @@
+.btn {
+  /* looks for the class btn */
+}
+#user {
+/* looks for id user */
+}
+
+p {
+  /* looks for p tags */
+  color: red;
+}
+.card .text-header {
+
+}
