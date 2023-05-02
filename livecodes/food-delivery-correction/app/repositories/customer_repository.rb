@@ -7,12 +7,12 @@ class CustomerRepository < BaseRepository
     %i[id name address]
   end
 
-  def building_row
+  def building_row(element)
     [element.id, element.name, element.address]
   end
 
   def converted_columns(row)
-    row[:id]    = row[:id].to_i
+    row[:id] = row[:id].to_i
     return row
   end
 
