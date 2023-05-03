@@ -1,5 +1,6 @@
 class Employee
   attr_reader :username, :password
+
   # STATE
   # role     => String 'manager' || 'rider'
   # username => String

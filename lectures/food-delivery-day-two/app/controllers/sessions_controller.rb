@@ -1,7 +1,6 @@
 require_relative '../views/session_view'
 
 class SessionsController
-
   def initialize(employee_repository)
     @session_view = SessionView.new
     @employee_repository = employee_repository
@@ -20,10 +19,10 @@ class SessionsController
       @session_view.welcome(current_user)
       current_user
     else
-     # 1. print a message (VIEW)
-     @session_view.try_again
-     # 2.                # RECURSION
-     login
+      # 1. print a message (VIEW)
+      @session_view.try_again
+      # 2.                # RECURSION
+      login
     end
   end
 end

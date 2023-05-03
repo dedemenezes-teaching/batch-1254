@@ -12,20 +12,28 @@ class Router
       @current_user = @sessions_controller.login
       while @current_user
         if @current_user.rider?
-          display_rider_actions
-          # 2. get the user choice
-          user_choice = gets.chomp.to_i
-          # 3. call the right controller action
-          dispatch_rider(user_choice)
+          manager_action
         else
-          display_manager_actions
-          # 2. get the user choice
-          user_choice = gets.chomp.to_i
-          # 3. call the right controller action
-          dispatch_manager(user_choice)
+          rider_action
         end
       end
     end
+  end
+
+  def rider_action
+    display_manager_actions
+    # 2. get the user choice
+    user_choice = gets.chomp.to_i
+    # 3. call the right controller action
+    dispatch_manager(user_choice)
+  end
+
+  def manager_action
+    display_rider_actions
+    # 2. get the user choice
+    user_choice = gets.chomp.to_i
+    # 3. call the right controller action
+    dispatch_rider(user_choice)
   end
 
   def display_rider_actions
@@ -53,10 +61,8 @@ class Router
     when 2 then @meals_controller.list
     when 3 then @customers_controller.add
     when 4 then @customers_controller.list
-    when 8
-      logout
-    when 9
-      quit
+    when 8 then logout
+    when 9 then quit
     else
       puts 'Choose between 1, 2, 3, 4 or 9'
     end
