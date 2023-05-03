@@ -1,4 +1,5 @@
 class Employee
+  attr_reader :username, :password
   # STATE
   # role     => String 'manager' || 'rider'
   # username => String
@@ -14,6 +15,3 @@ class Employee
     @role == 'rider'
   end
 end
-
-rider = Employee.new(role: 'rider', username: 'andre', password: 'secret')
-p rider
