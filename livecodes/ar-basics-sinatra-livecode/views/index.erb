@@ -1,0 +1,21 @@
+<h1>Hello Batch #1254</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+      <%= "- #{restaurant.address}" %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Create your restaurant</h2>
+<form action="/restaurants" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name='name' id='name'>
+  <label for="address">Address</label>
+  <input type="text" name='address' id='address'>
+  <label for="rating">Rating</label>
+  <input type="number" name="rating" id="rating" min='0' max='5'>
+  <input type="submit" value="Create restaurant">
+</form>
